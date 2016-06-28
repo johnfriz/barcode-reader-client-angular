@@ -1,16 +1,24 @@
 <p>
-    Barcode Info
+  Barcode Info
+  <br/>
+
+  <div ng-if="!vm.barcode.err">
+    Barcode: {{vm.barcode.id}}
     <br/>
     Name: {{vm.barcode.productname}}
     <br/>
-    Price: {{vm.barcode.price}}
-    <br/>
-    Currency: {{vm.barcode.currency}}
+    Price: {{vm.barcode.currency}} {{vm.barcode.price}}
     <br/>
     <img data-ng-src="{{ vm.barcode.imagebase64 }}"/>
+    <br/>
+    <form>
+    	<input type="text" ng-model="vm.quantity" value="1">
+    	<button ng-click="vm.orderItem()" value="Order Item">Order Item</button>
+    </form>
+  </div>
+  <div ng-if="vm.barcode.err">
+    Failed to get barcode information for barcode {{vm.barcode.id}}
+    <br/>
+    {{vm.barcode.err}}
+  </div>
 </p>
-
-<form>
-	<input type="text" ng-model="vm.quantity" value="1">
-	<button ng-click="vm.orderItem()" value="Order Item">Order Item</button>
-</form>

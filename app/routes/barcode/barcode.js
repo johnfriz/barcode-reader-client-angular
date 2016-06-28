@@ -17,6 +17,8 @@ function BarcodeController(fh, orders) {
       console.log('arguments :: ', arguments);
       if(data.err) {
         console.log('barcode/recent error : ', data.err);
+        vm.barcode = data;
+        vm.barcode.id = vm.id;
       }
       else {
         console.log('barcode/recent res : ', data.res);
