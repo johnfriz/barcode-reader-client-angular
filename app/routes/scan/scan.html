@@ -1,0 +1,6 @@
+<ng-outlet><scan $router="$$router"></scan></ng-outlet>
+
+<form>
+	<input type="text" ng-model="vm.barcode">
+	<button ng-click="vm.readBarcode()" value="Read Barcode">Read Barcode</button>
+</form>

@@ -1,0 +1,24 @@
+<p>
+    Orders
+</p>
+
+<div ng-repeat="order in vm.orders">
+  <p>
+    Barcode: {{order.barcode}}
+    <br/>
+    Name: {{order.productname}}
+    <br/>
+    Price: {{vm.barcode.currency}} {{order.price}}
+    <br/>
+    Quantity: {{order.quantity}}
+    <br/>
+    Total: {{order.price * order.quantity}}
+    </br>
+    Id: {{order.id}}
+    <br/>
+    <form>
+    	<button ng-click="vm.removeItem(order.id)" value="Remove Item">Remove Item</button>
+    </form>
+    <img data-ng-src="{{ order.imagebase64 }}"/>
+  </p>
+</div>

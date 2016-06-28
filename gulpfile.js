@@ -22,8 +22,9 @@ gulp.task('default', [
 
 gulp.task('deps', function() {
     return gulp.src([
-        'node_modules/@angular/router/angular1/angular_1_router.js'
-    ])
+        'node_modules/@angular/router/angular1/angular_1_router.js',
+        'lib/feedhenry.js'
+        ])
     .pipe(sourcemaps.init())
     .pipe(concat('dependencies.js'))
     .pipe(sourcemaps.write())
@@ -44,7 +45,8 @@ gulp.task('build', function() {
 
 gulp.task('html', function() {
     return gulp.src([
-        './views/index.html'
+        './views/index.html',
+        './views/fhconfig.json'
     ])
     .pipe(gulp.dest('./dist/'));
 });

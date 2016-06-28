@@ -1,0 +1,16 @@
+<p>
+    Barcode Info
+    <br/>
+    Name: {{vm.barcode.productname}}
+    <br/>
+    Price: {{vm.barcode.price}}
+    <br/>
+    Currency: {{vm.barcode.currency}}
+    <br/>
+    <img data-ng-src="{{ vm.barcode.imagebase64 }}"/>
+</p>
+
+<form>
+	<input type="text" ng-model="vm.quantity" value="1">
+	<button ng-click="vm.orderItem()" value="Order Item">Order Item</button>
+</form>
